@@ -61,6 +61,35 @@ namespace Apis.Facebook.Services
             }
             return userToReturn;
         }
+
+        public async Task<User> GetUserByIdAsync(string id)
+        {
+            return await GetUserByIdAsync(id, UserField.id, UserField.name);
+        }
+
+        public async Task<User> GetUserByIdAsync(string id, params UserField[] fields)
+        {
+            string fieldsToEndpoint = string.Empty;
+            for (int i = 0; i < fields.Length; i++)
+            {
+                fieldsToEndpoint += fields[i].ToString();
+                fieldsToEndpoint += ",";
+            }
+            fieldsToEndpoint = fieldsToEndpoint.Remove(fieldsToEndpoint.Length - 1);
+            var endpoint = $"v11.0/{id}?access_token={_accessToken}&fields={fieldsToEndpoint}";
+            var res = await _httpClient.GetAsync(endpoint);
+            User userToReturn = null;
+            if (res.IsSuccessStatusCode)
+            {
+                userToReturn = JsonSerializer.Deserialize<User>(await res.Content.ReadAsStringAsync());
+            }
+            else
+            {
+                userToReturn = new User();
+                userToReturn.Error = JsonSerializer.Deserialize<FacebookError>(await res.Content.ReadAsStringAsync());
+            }
+            return userToReturn;
+        }
         #endregion
     }
 }
