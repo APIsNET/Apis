@@ -6,6 +6,6 @@ namespace Apis.Facebook.Services.Interfaces
     public interface IUserService
     {
         Task<User> GetMeAsync();
-        Task<User> GetMeAsync(params Field[] fields);
+        Task<User> GetMeAsync(params UserField[] fields);
     }
 }

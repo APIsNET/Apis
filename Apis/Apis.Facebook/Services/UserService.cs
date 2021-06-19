@@ -35,10 +35,10 @@ namespace Apis.Facebook.Services
         #region Methods
         public async Task<User> GetMeAsync()
         {
-            return await GetMeAsync(Field.id, Field.name);
+            return await GetMeAsync(UserField.id, UserField.name);
         }
 
-        public async Task<User> GetMeAsync(params Field[] fields)
+        public async Task<User> GetMeAsync(params UserField[] fields)
         {
             string fieldsToEndpoint = string.Empty;
             for (int i = 0; i < fields.Length; i++)

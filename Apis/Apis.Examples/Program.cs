@@ -10,8 +10,9 @@ namespace Apis.Examples
     {
         static async Task Main(string[] args)
         {
-            IFacebookClient client = new FacebookClient("EAADCfA453fMBAJXNzX4Hy5RozefsZBje9Uel6c7G1d1jHLZCtK8nYB73VvcuStrVXqC3DodE8t4J2advVw2kMzTRiljxg21e7sNbPVbKmiE1LFYaJwPB9n1RttKHYNbZBbkoNpsFgNTrxhuEYnBwyp7sz1MrdJKYvu6QRmZAvqalI29b9N4jEZBqfYZAuranqBigek8g23iAZDZD");
-            var user = await client.Users.GetMeAsync(Field.id, Field.first_name, Field.name);
+            IFacebookClient client = new FacebookClient("EAADCfA453fMBAJ1paZAXYQbZAJ2eCO2xJ9PHZBSggRK6HmOi9YmAZAfrEH1zOqCIqPgqnh8E8QbmMp6pd5ukK2onre9NN79LVZAXTFNCCZBPgR49ocOMtblEZCcwFYzkIvXAVYZAbG1GAe31aRdGc9JXpHr4LzydWRH09zGKb0KIxndZCCKanDlj4R9KIGtgk2ZCPfB14wKhfEvJmASfJSMG5a9DBonSfWgSyfggZAtZCkVhQ3HBeiT2vWEa");
+            var user = await client.Users.GetMeAsync(UserField.id, UserField.name, UserField.name_format, UserField.languages, UserField.hometown, UserField.birthday, UserField.age_range);
+            Console.WriteLine($"Id: {user.Id} {user.Quotes} {user.Religion} {user.Birthday}");
         }
     }
 }
