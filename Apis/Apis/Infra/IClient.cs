@@ -2,6 +2,6 @@
 {
     public interface IClient
     {
-        string AccessToken { get; set; }
+        string AccessToken { get; }
     }
 }
