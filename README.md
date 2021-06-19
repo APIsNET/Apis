@@ -29,9 +29,12 @@ In plans next apis:
 |Slack|Pending|
 |Spotify|Pending|
 |Stack Exchange|Pending|
+|Telegram|Pending|
 |Twitch|Pending|
+|Viber|Pending|
 |Vimeo|Pending|
 |Visual Studio|Pending|
+|WhatsApp|Pending|
 |WordPress|Pending|
 |Yahoo|Pending|
 |Yammer|Pending|
