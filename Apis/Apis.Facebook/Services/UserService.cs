@@ -47,7 +47,7 @@ namespace Apis.Facebook.Services
                 fieldsToEndpoint += ",";
             }
             fieldsToEndpoint = fieldsToEndpoint.Remove(fieldsToEndpoint.Length - 1);
-            var endpoint = $"v10.0/me?access_token={_accessToken}&fields={fieldsToEndpoint}";
+            var endpoint = $"v11.0/me?access_token={_accessToken}&fields={fieldsToEndpoint}";
             var res = await _httpClient.GetAsync(endpoint);
             User userToReturn = null;
             if (res.IsSuccessStatusCode)
