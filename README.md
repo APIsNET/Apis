@@ -11,6 +11,7 @@ In plans next apis:
 |Bitbucket|Pending|
 |Discord|Pending|
 |Dropbox|Pending|
+|Facebook|Pending|
 |Fitbit|Pending|
 |Google|Pending|
 |GitHub|Pending|
